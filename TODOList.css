@@ -1,0 +1,144 @@
+html,
+body {
+	height: 100%;
+	font:1rem Typo-round, bold;
+	letter-spacing:4.5px;
+}
+* { 
+	text-decoration:none; 
+	list-style-type:none;
+	margin:0;
+	box-sizing:border-box;
+	resize:horizontal;
+	padding: 0;
+	box-sizing:border-box;
+ }
+@font-face {
+	font-family:Typo-round;
+	src:url('Typo_Round_Bold_Demo.otf');
+}
+button {
+	background:#40E0D0;
+	border-radius: 80px;
+	padding: 5px 10px;
+	color: #fff;
+	font-size: 1.2em;
+	text-decoration: none;
+	border-style:none;
+	font-weight:bolder;
+	cursor:pointer;	
+}
+form {
+  display:none;
+}
+input {
+	width:100%;
+	border-radius:100px;
+	padding:5px 5%;
+	border:2px solid #7FFFD4;
+}
+#wrapper {
+	height: 100%;
+	display: grid;
+	padding-top:40px;
+	grid-template-columns: 4% 92% 4%;
+	grid-template-rows:auto 1fr;
+	grid-template-areas: 'header header header' '. main .';
+}
+header {
+	height:30%;
+	grid-area: header;
+	font-size: 35px;
+	color:#40E0D0;
+	text-align: center;
+}
+main {
+	grid-area: main;
+}
+#date {
+  position:sticky;
+  left:15%;
+  color:#40E0D0;
+  font-weight:bold;
+  text-decoration:underline;
+}
+#setDate {
+	position:sticky;
+	left:70%;
+}
+#inputDate {
+	width:30%;
+	position:sticky;
+	left:70%;	
+}
+#toDos {
+	display:grid;
+	grid-template-rows:auto auto auto;
+	grid-template-columns:15% 5% 65% 5% 20%;
+	grid-template-areas: ' . ul ul ul . ' 'addBtn form form commitBtn .' '. . clearBtn . .';
+	grid-row-gap:30px;
+	margin-top:50px;
+}
+#add {
+	grid-area: addBtn;
+	cursor:pointer;
+	margin-left:100%;
+}
+#formToDo {
+	grid-area:form;	
+}
+#commit {
+	display:none;
+	grid-area:commitBtn;
+}
+ul {
+	grid-area:ul;
+	line-height:50px;
+	list-style-type:none;
+}
+li span {
+	color:orange;
+	cursor:pointer;
+	margin:0 5px;
+}
+.inline {
+	display:inline-block;
+	width:30%; 
+	overflow-x:hidden;
+}
+.iconsBox {
+	display:inline;
+	float:right;
+	padding-right:10px;
+}
+#clearToDo {
+	grid-area:clearBtn;
+	margin-bottom:45px;
+	display:none;
+}
+.strikethrough {
+text-decoration:line-through;
+}
+footer {
+	position:fixed;
+	bottom:0px;
+	height:10%;
+	width:100%;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	color:white;
+	background:#40E0D0;
+}
+
+@media screen and (min-width:950px) {
+	#toDos {
+		grid-template-areas: ' . . ul . . ' '. addBtn form commitBtn .' '. . clearBtn . .';
+	}
+	.inline {
+		overflow-x:visible;
+	}
+	li span {
+		padding:0 10px;
+	}
+}
